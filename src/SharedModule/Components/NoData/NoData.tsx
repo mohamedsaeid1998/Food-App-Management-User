@@ -4,7 +4,6 @@ import { ToastContext } from '@/Context/ToastContext'
 import { NoDataImg } from '@/assets/images'
 import baseUrl from '@/utils/Custom/Custom'
 import { useContext, useState } from 'react'
-import { toast } from 'react-toastify'
 interface IProps {
   location?: string
   handleClose: () => void

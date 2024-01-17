@@ -1,5 +1,5 @@
 import { AuthContext } from '@/Context/AuthContext';
-import { NavAvatar, UpskillingLogo, sideBarLogo } from '@/assets/images';
+import { NavAvatar, UpskillingLogo } from '@/assets/images';
 import { UseAuthenticatedQuery } from '@/utils';
 import { useContext } from 'react';
 import { useTypewriter } from "react-simple-typewriter";
