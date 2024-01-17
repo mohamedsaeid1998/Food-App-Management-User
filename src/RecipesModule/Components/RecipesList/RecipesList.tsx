@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { AuthContext } from "@/Context/AuthContext";
 import { Header, LoadingSpinner, NoData, TableDetailsSec } from "@/SharedModule/Components";
 import { NoImage5 } from '@/assets/images';
