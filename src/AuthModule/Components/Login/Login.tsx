@@ -9,7 +9,6 @@ import { useForm } from 'react-hook-form'
 import { Link, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 // @ts-ignore
-// import { Helmet } from '';
 
 const Login = () => {
 
@@ -18,7 +17,7 @@ const Login = () => {
   const { getToastValue } = useContext(ToastContext)
   const { saveAdminData } = useContext(AuthContext)
 
-  const { register, handleSubmit, formState: { errors } } = useForm<IFormValues>()
+  const { register, setValue, handleSubmit, formState: { errors } } = useForm<IFormValues>()
 
   function handleCallbackResponse(response: any) {
 
@@ -74,11 +73,11 @@ const Login = () => {
 
 
   return <>
-<Helmet>
-  <title> Sign in • Food App</title>
-</Helmet>
+    <Helmet>
+      <title> Sign in • Food App</title>
+    </Helmet>
 
-    <AuthComponent>
+    <AuthComponent {...{ setValue }}>
       <form onSubmit={handleSubmit(submitLogin)}>
         <h2 className='fw-bold'>Log In</h2>
         <p>Welcome Back! Please enter your details</p>
@@ -88,9 +87,8 @@ const Login = () => {
         <PasswordInput register={register} inputName={'password'} placeholder='Password' errors={errors} />
 
         <div className=' mt-2 d-flex flex-md-row justify-content-between align-items-center flex-column'>
-        <Link to={'/register'} className='forget text-decoration-none orange '>Registration ?</Link>
-          <div className=' my-2' id='signInDiv'></div>
-          
+          <Link to={'/register'} className='forget text-decoration-none orange '>Registration ?</Link>
+
           <Link to={'/forget-pass-request'} className='forget'>Forgot Password ?</Link>
         </div>
         <button type='submit' disabled={Loading} className='btn btn-success w-100 mt-4 fw-bold'>{Loading ? <i className='fa fa-spin fa-spinner'></i> : "Login"}</button>
