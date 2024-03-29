@@ -21,8 +21,7 @@ const RecipesList = () => {
   //?  **********Get Tags**********//
   const { data: tags } = UseAuthenticatedQuery({
     queryKey: [`getTags`],
-    url: `https://upskilling-egypt.com:443
-/api/v1/tag`,
+    url: `https://upskilling-egypt.com:3006/api/v1/tag`,
     config: {
       headers
     }
@@ -31,8 +30,7 @@ const RecipesList = () => {
   //?  **********Get categories**********//
   const { data: categories } = UseAuthenticatedQuery({
     queryKey: [`getCategories`],
-    url: `https://upskilling-egypt.com:443
-/api/v1/Category/`,
+    url: `https://upskilling-egypt.com:3006/api/v1/Category/`,
     config: {
       headers,
       params: {
@@ -51,8 +49,7 @@ const RecipesList = () => {
   });
   const { data: tableData, refetch } = UseAuthenticatedQuery({
     queryKey: [`getRecipes`],
-    url: `https://upskilling-egypt.com:443
-/api/v1/Recipe/`,
+    url: `https://upskilling-egypt.com:3006/api/v1/Recipe/`,
     config: {
       headers,
       params: {
@@ -125,8 +122,7 @@ const RecipesList = () => {
 
   const { data: favList, refetch: reFresh } = UseAuthenticatedQuery({
     queryKey: [`getFavorites`],
-    url: `https://upskilling-egypt.com:443
-/api/v1/userRecipe/?pageSize=10000&pageNumber=1`,
+    url: `https://upskilling-egypt.com:3006/api/v1/userRecipe/?pageSize=10000&pageNumber=1`,
     config: {
       headers
     }
@@ -165,7 +161,7 @@ const RecipesList = () => {
           {!recipeData && <LoadingSpinner />}
           {recipeData && <div>
             <div className="d-flex justify-content-center align-items-center mb-2">
-              <img className="w-50 h-50 rounded-4" src={recipeData?.imagePath === "" ? NoImage5 : `https://upskilling-egypt.com:443/` + recipeData?.imagePath} />
+              <img className="w-50 h-50 rounded-4" src={recipeData?.imagePath === "" ? NoImage5 : `https://upskilling-egypt.com:3006/` + recipeData?.imagePath} />
             </div>
             <h6 className="d-block text-success fw-bold">UserName: <span className="text-black">{recipeData?.name}</span></h6>
             <h6 className="d-block text-success fw-bold">Price: <span className="text-black"> {recipeData?.price}</span></h6>
@@ -238,7 +234,7 @@ const RecipesList = () => {
                 <td data-cell="name ">{data?.name}</td>
 
                 <td data-cell="price ">{data?.price}</td>
-                <td data-cell="image ">{data?.imagePath === "" ? <img className='img-table' src={NoImage5} alt="image" /> : <img className=' img-table' src={`https://upskilling-egypt.com:443/` + data?.imagePath} alt="image" />}</td>
+                <td data-cell="image ">{data?.imagePath === "" ? <img className='img-table' src={NoImage5} alt="image" /> : <img className=' img-table' src={`https://upskilling-egypt.com:3006/` + data?.imagePath} alt="image" />}</td>
                 <td className='text-truncate' data-cell="description ">{data?.description}</td>
                 <td data-cell="tag ">{data?.tag?.name}</td>
                 <td data-cell="category ">{data?.category[0] === undefined ? "No Category" : data?.category[0]?.name}</td>

@@ -15,8 +15,7 @@ const FavoritesList = () => {
 
   const { data: favList, refetch } = UseAuthenticatedQuery({
     queryKey: [`getFavorites`],
-    url: `https://upskilling-egypt.com:443
-/api/v1/userRecipe/?pageSize=10000&pageNumber=1`,
+    url: `https://upskilling-egypt.com:3006/api/v1/userRecipe/?pageSize=10000&pageNumber=1`,
     config: {
       headers
     }
@@ -53,7 +52,7 @@ const FavoritesList = () => {
         <div className=" col-sm-6 col-md-4 col-lg-3 mb-5">
           <div className="portCon shadow rounded-5">
             <div className="portImg rounded-5 ">
-              <img src={item?.recipe?.imagePath === "" ? NoImage5 : `https://upskilling-egypt.com:443/` + item?.recipe?.imagePath} className="w-100   img" alt="this picture is not found" />
+              <img src={item?.recipe?.imagePath === "" ? NoImage5 : `https://upskilling-egypt.com:3006/` + item?.recipe?.imagePath} className="w-100   img" alt="this picture is not found" />
             </div>
             <div className="row pt-4 px-2">
 
